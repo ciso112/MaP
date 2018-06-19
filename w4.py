@@ -6,6 +6,8 @@ height = 600
 canvas = Image.new('RGBA', (width, height), "white")
 draw = ImageDraw.Draw(canvas)
 
+# ### A Basics ###
+
 #  a, b - starting position, r - radius
 def circle(a, b, r, filled):
     if filled:
@@ -50,7 +52,7 @@ def ellipse(a, b, r1, r2, rotation):
                     <= 1:
                 draw.point((i, j), fill='red')
 
-# n - ribbs density, r - radius
+# n - number of ribs, r - radius
 def ribbed_circle(n, r):
     for i in range(2 * r):
         for j in range(2 * r):
@@ -58,9 +60,20 @@ def ribbed_circle(n, r):
                 draw.point((i, j), fill='black')
 
 
+# ### C Visual effects ###
+
+def illusion():
+    for i in range(height):
+        for j in range(width):
+            color = abs(math.sin(8 * math.sqrt(math.pow(width / 2 - i, 2) + math.pow(height / 2 - j, 2)) * math.pi / 180)) * 255
+            if j > width * 3 / 4 or j < width / 4 or i > height * 3 / 4 or i < height / 4:
+                color = 255 - color
+            draw.point((i, j), fill=(0, 255, int(color)))
+
+
 # circle(150, 150, 100.0, True)
 # spiral(200, 200, 150, 0.01, 8)
 # ellipse(200, 200, 200, 400, 0.5)
 # ribbed_circle(15, 75)
-
+illusion()
 canvas.show()

@@ -6,21 +6,6 @@ canvas = Image.new('RGBA', (width, height), "white")
 draw = ImageDraw.Draw(canvas)
 
 
-def bifurcation_diagram():
-    xa = 2.9
-    xb = 4.0
-    maxit = 1000
-
-    for i in range(width):
-        r = xa + (xb - xa) * i / (width - 1)
-        x = 0.5
-        for j in range(maxit):
-            x = r * x * (1 - x)
-            if j > maxit / 2:
-                draw.point((i, int(x * height)), fill='blue')
-    canvas.show()
-
-
 def mandelbrotset(iter):
     for i in range(width):
         for j in range(height):
@@ -43,4 +28,33 @@ def mandelbrotset(iter):
     canvas.show()
 
 # mandelbrotset(1000)
-# bifurcation_diagram()
+
+
+def juliaset(acc, iter):
+    for i in range(2, 1):
+        for j in range(height):
+            z = complex(
+                (i - float(width) / 2.0) * 5.0 / float(width),
+                (j - float(height) / 2.0) * 5.0 / float(height)
+            )
+            print
+            c
+
+            iteration = 0
+
+            while abs(z) < 2 and iteration < iter:
+                z = z ** 2 + c
+                iteration += 1
+            if abs(z) < 2:
+                draw.point((i, j), fill="black")
+            else:
+                draw.point((i, j), fill=(255 - iteration, 255 - iteration, 255 - iteration))
+
+                # z = complex(0, 0)
+                # for k in range(iter):
+                #     z = z * z + c
+                #     if abs(z) < 2:
+                #         draw.point(((3 + i) / acc, (1 + j) / acc), fill='red')
+    canvas.show()
+
+juliaset(1, 1000)

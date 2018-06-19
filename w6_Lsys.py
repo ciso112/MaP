@@ -3,11 +3,9 @@ import my_turtle
 turtle = my_turtle.Turtle()
 turtle.turtle(900, 900, 400, 400)
 
-D = 90
-L = 10
+# ### C L-systems ###
 
-
-def iterate(axiom, num=0, initator='F'):
+def iterate(axiom, num, initator):
 
     def translate(current, axiom):
 
@@ -26,8 +24,8 @@ def iterate(axiom, num=0, initator='F'):
         result = translate(result, axiom)
     return result
 
-
-def draw(axiom, d=D, l=L):
+# a - angle; l - length
+def draw(axiom, a, l):
 
     turtle.left(90)
 
@@ -43,10 +41,10 @@ def draw(axiom, d=D, l=L):
             turtle.pen_down()
 
         elif c == '+':
-            turtle.left(d)
+            turtle.left(a)
 
         elif c == '-':
-            turtle.right(d)
+            turtle.right(a)
 
         elif c == '[':
             turtle.push()
