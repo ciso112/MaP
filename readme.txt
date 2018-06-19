@@ -1,6 +1,12 @@
-pozn.:
--vela toho este chyba, ale nieco uz je spravene
--ohladom zajtrajska dufam, ze dostanem snad nejaky feedback na kod, nic viac
--clenenie je do istej miery provizorne, no verim, ze vcelku logicke
--po odovzdani sucasnej verzie pokracujem dalej (mam par rozrobenych casti, kt. som zatial nepublikoval)
--formu ukoncenia predmetu mam kolokvium
+slabe stranky:
+w10 - clustering
+w8 - transformations - 2D priestor
+w1 - kombinacie, variacie,...
+
+silne stranky:
+w9 - nahoda, pravdepodobnost
+my_turtle
+w14 - generovanie bludiska - kompaktnost kodu
+
+kazdopadne, do zajtrajska este planujem niektore veci vylepsit, aj ked je to po DDL
+
